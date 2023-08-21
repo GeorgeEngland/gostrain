@@ -1,0 +1,14 @@
+# All Aboard The GosTrain!!!
+
+## GosTrain is all about reliable and fast performance of a sequencer application.
+
+At the core is a **Sequencer** that receives external **commands**. 
+
+**Commands** become **Messages** on the sequencer queue.
+
+**Services** consume all **Messages** in the queue
+
+
+A **Service** is a user-defined application that consumes all **Messages** in the queue and may send commands back to the sequencer.
+
+An important feature of a **Service** is that (if it is stateful), must implement the StatefulService Interface, which is responsible for storing/restoring the state of the **Service** in the event of a restart (and that playing back from the beginning of time is not possible)
